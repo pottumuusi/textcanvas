@@ -1,7 +1,7 @@
 LIBRARY_NAME := textcanvas
 LIBRARY_FILE := lib$(LIBRARY_NAME).a
 
-PROJECT_ROOT := /home/tank/my/repositories/github/re-release/pottumuusi/c-text-canvas
+PROJECT_ROOT := /home/tank/my/repositories/github/re-release/pottumuusi/textcanvas
 
 HEADER_DIRECTORY := include
 SOURCE_DIRECTORY_LIBRARY := src/library

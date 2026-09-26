@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include <c-text-canvas.h>
+#include <textcanvas.h>
 
 int
 main(void)

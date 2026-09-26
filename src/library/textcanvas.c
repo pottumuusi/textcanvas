@@ -1,4 +1,4 @@
-#include <c-text-canvas.h>
+#include <textcanvas.h>
 
 int
 test_return(void)
