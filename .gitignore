@@ -1,0 +1,5 @@
+*.o
+*.a
+c-text-canvas.a
+c-text-canvas.vim
+test
