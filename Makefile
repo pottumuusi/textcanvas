@@ -24,7 +24,7 @@ CFLAGS := -c -I$(HEADER_DIRECTORY)
 LDFLAGS := -l$(LIBRARY_NAME)
 
 EXE_TEST := test
-EXE_DEMO := demo
+EXE_DEMO := demonstration
 
 # https://www.gnu.org/software/make/manual/html_node/Automatic-Variables.html
 # https://www.gnu.org/software/make/manual/html_node/Suffix-Rules.html
