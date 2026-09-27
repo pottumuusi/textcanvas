@@ -10,6 +10,10 @@
 uint32_t canvas_image[CANVAS_HEIGHT][CANVAS_WIDTH] = {0};
 uint32_t canvas_draw_buffer[CANVAS_HEIGHT][CANVAS_WIDTH] = {0};
 
+/*
+ * For testing that this function can be called when executing a binary that
+ * utilizes the library that includes this function.
+ */
 int
 test_return(void)
 {
