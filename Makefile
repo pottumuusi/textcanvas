@@ -20,7 +20,7 @@ OBJECT_FILES_LIBRARY := $(SOURCE_FILES_LIBRARY:.c=.o)
 OBJECT_FILES_TEST := $(SOURCE_FILES_TEST:.c=.o)
 OBJECT_FILES_DEMO := $(SOURCE_FILES_DEMO:.c=.o)
 
-CFLAGS := -c -I$(HEADER_DIRECTORY)
+CFLAGS_C_TO_OBJ := -c -I$(HEADER_DIRECTORY)
 LDFLAGS := -l$(LIBRARY_NAME)
 
 EXE_TEST := test
@@ -29,13 +29,13 @@ EXE_DEMO := demonstration
 # https://www.gnu.org/software/make/manual/html_node/Automatic-Variables.html
 # https://www.gnu.org/software/make/manual/html_node/Suffix-Rules.html
 .c.o:
-	$(CC) $(CFLAGS) -o $@ $<
+	$(CC) $(CFLAGS_C_TO_OBJ) -o $@ $<
 
 $(LIBRARY_FILE): $(OBJECT_FILES_LIBRARY)
 	$(AR) $(AR_OPTIONS) $(LIBRARY_FILE) $^
 
 $(EXE_TEST): $(LIBRARY_FILE) $(OBJECT_FILES_TEST)
-	LIBRARY_PATH=$(PROJECT_ROOT) $(CC) -o $@ $^ $(LDFLAGS)
+	LIBRARY_PATH=$(PROJECT_ROOT) $(CC) -o $@ $(OBJECT_FILES_TEST) $(LDFLAGS)
 
 $(EXE_DEMO): $(LIBRARY_FILE) $(OBJECT_FILES_DEMO)
-	LIBRARY_PATH=$(PROJECT_ROOT) $(CC) -o $@ $^ $(LDFLAGS)
+	LIBRARY_PATH=$(PROJECT_ROOT) $(CC) -o $@ $(OBJECT_FILES_DEMO) $(LDFLAGS)
